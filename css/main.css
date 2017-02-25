@@ -1,1 +1,70 @@
+/* General */
+html, body {
+  font: 16px/24px;
+  margin: 0 auto;
+  padding: 0; }
 
+.box-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.box-left {
+  background-color: lightblue;
+  width: 20%;
+  margin: 1rem;
+  padding: 1rem; }
+
+.box-middle {
+  background-color: teal;
+  width: 20%;
+  margin: 1rem;
+  padding: 1rem; }
+
+.box-right {
+  background-color: lightsalmon;
+  width: 20%;
+  margin: 1rem;
+  padding: 1rem; }
+
+.box-right-ratings {
+  background-color: lightyellow;
+  width: 20%;
+  margin: 1rem;
+  padding: 1rem; }
+
+.box-right-genres {
+  background-color: lightgrey;
+  width: 20%;
+  margin: 1rem;
+  padding: 1rem; }
+
+.bottom-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /*	flex-direction: row;*/
+  /*	background-color: lightgreen;*/ }
+
+.box-bottom {
+  width: 50%;
+  /*	flex-direction: row;*/
+  /*	background-color: lightyellow;*/ }
+
+.movies-html {
+  background-color: white;
+  width: 80%;
+  display: flex; }
+
+.movies-html .img {
+  width: 80%; }
+
+.movies-html-left {
+  background-color: white;
+  width: 40%; }
+
+.movies-html-right {
+  background-color: white;
+  width: 60%; }
+
+/*# sourceMappingURL=main.css.map */

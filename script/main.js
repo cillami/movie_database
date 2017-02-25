@@ -1,5 +1,3 @@
-//movie objects
-
 var movieDatabase = (function(){
 
 var moviesArray = [
@@ -9,7 +7,7 @@ var moviesArray = [
     year: 2015,
     cover: "https://media.senscritique.com/media/000011963740/source_big/The_Lobster.jpg",
     genres: ["Comedy", "Drama", "Romance", "Sci-Fi"],
-    ratings: [],
+    ratings: [8,2],
     actors: [
     {
         name: "Colin Farrell"
@@ -25,7 +23,7 @@ var moviesArray = [
     year: 1985,
     cover: "https://s-media-cache-ak0.pinimg.com/564x/50/c0/4f/50c04f97966de0ed73262de082aae11d.jpg",
     genres: ["Adventure", "Comedy", "Family"],
-    ratings: [],
+    ratings: [4,5],
     actors: [
     {
         name: "Sean Astin"
@@ -37,11 +35,43 @@ var moviesArray = [
 },
 
 {
+    title: "Love Actually",
+    year: 2003,
+    cover: "https://images-na.ssl-images-amazon.com/images/I/51PD8CBP6XL.jpg",
+    genres: ["Comedy", "Drama", "Romance"],
+    ratings: [4,5],
+    actors: [
+    {
+        name: "Hugh Grant"
+    },
+    {
+        name: "Emma Thompson"
+    }
+    ]
+},
+
+{
+    title: "The Shining",
+    year: 1980,
+    cover: "http://spartanoracle.com/wp-content/uploads/2015/10/shining-2.jpg",
+    genres: ["Drama", "Horror"],
+    ratings: [4,5],
+    actors: [
+    {
+        name: "Hugh Grant"
+    },
+    {
+        name: "Emma Thompson"
+    }
+    ]
+},
+
+{
     title: "Moonlight",
     year: 2016,
     cover: "http://cdn.a24films.com/assets/MOONLIGHT-QUOTEPOSTER-WEB.jpg",
     genres: ["Drama"],
-    ratings: [],
+    ratings: [5,2],
     actors: [
     {
         name: "Mahershala Ali"
@@ -53,125 +83,132 @@ var moviesArray = [
 }
 ];
 
-    function getAllMovies(){
-        return moviesArray.map(function(movie){
-                    // console.log('test' + movie.title);
+    return {
 
-        var list = document.createElement("li");
-        var movieList = document.createTextNode(movie.title);
-        list.appendChild(movieList);
-        document.getElementById("movieList").appendChild(list);
-        return movie.title;
+        returnMoviesArray: function(){
+            return moviesArray;
+        },
 
-        },0);
+        showAllMovies: function(){
+        // console.log("click");
+            movieList.innerHTML = "";
+            for (var i = 0; i < moviesArray.length ;i++){
+                var html = `<div class="movies-html">
+                <div class="movies-html-left">
+                 <p><img src="${moviesArray[i].cover}" class="img"> </p>
+                 </div>
+                <div class="movies-html-left">
+                 <p>Movie Title : ${moviesArray[i].title}</p>
+                 <p>Release Year : ${moviesArray[i].year} </p>
+                 <p>Genres : ${moviesArray[i].genres} </p>
+                 <p>Ratings : ${moviesArray[i].ratings} </p>
+                 <br>
+                 </div>
+                </div>`;
+            movieList.innerHTML += html;
+            }
+        },
 
-    }
-//genreInput är ex "Comedy"
-
-    function getGenre(genreInput){ 
-        return moviesArray.filter((movie) => 
-            movie.genres.some((genres) => genres === genreInput))
-            .map(movie => {
-            let genreList = Object.assign({}, movie); // makes a copy of movie
-    // console.log(newGenre);
-        return genreList.title;
-        },0);
-    }
-
-      // function getGenre(genre){
-      //   return movies.filter(function(movie){
-
-        
-      //   return movie.genre === "Comedy";
-      //   }).map(function(movie){
-      //     return movie.title;
-        
-      //   },0);
-
-      // }
-  
-
-//         function getGenre(genre){
-//         return movies.filter(function(movie, index, array){
-//             // return movie.includes("Comedy", -100);
-// var genre = " ";
-
-// for (var i = 0; i < array.length; i++) {
-//     console.log(array[i]);
-// };
-          
-        // return movie.genre
-
-        
-
-        // },0);
-
+        showGenre: function(genreList){
+            console.log("click");
      
+            movieList.innerHTML = "";
+            for (var i = 0; i < genreList.length ;i++){
+                var html = `<div class="movies-html">
+                <div class="movies-html-left">
+                 <p><img src="${genreList[i].cover}" class="img"> </p>
+                 </div>
+                <div class="movies-html-left">
+                 <p>Movie Title : ${genreList[i].title}</p>
+                 <p>Release Year : ${genreList[i].year} </p>
+                 <p>Genres : ${genreList[i].genres} </p>
+                 <p>Ratings : ${genreList[i].ratings} </p>
+                 <br>
+                 </div>
+                </div>`;
+            movieList.innerHTML += html;
+            }
+        },
+
+        movieConstructor: function(title, year, cover, genres, ratings, actors){
+            this.title = title;
+            this.year = year;
+            this.cover = cover;
+            this.genres = genres.split(" ");
+            this.ratings = ratings.split(" ");
+            this.actors = actors;
+        },
+
+        getUserInput: function(){
+            console.log("click");
+            var title = document.getElementById('title').value
+            var year = document.getElementById('year').value
+            var cover = document.getElementById('cover').value
+            var genres = document.getElementById('genres').value
+            var ratings = document.getElementById('ratings').value
+            var actors = document.getElementById('actors').value
+
+            var newMovie = new movieDatabase.movieConstructor(title, year, cover, genres, ratings, actors);
+            moviesArray.push(newMovie); 
+        },
 
 
-  return {
-    getAllMovies: getAllMovies,
-    getGenre: getGenre("Romance")
-  }
+        inputGenre: function(choice){ 
+        var userChoice = movieDatabase.filterGenre(choice.target.value);
+        // var lisst = getGenre();
+        console.log(choice.target.value);
+        console.log(userChoice);
+        movieDatabase.showGenre(userChoice);    
+        },
 
-  // return{
+        // filterGenre: function(genre){ 
 
-  //   getGenre: function(genre){
-  //       return movies.filter(function(movie){
-        
-  //       return movie.genre === "Comedy";
-  //       }).map(function(movie){
-  //         return movie.title;
-          
-  //       },0);
-  //   }
+        //     return moviesArray.filter((movie) =>
+        //     movie.genres.some((genres) => genres == genre))
+        //     .map(movie => {
+        //     // var genreList = Object.assign({}, movie); 
+        //     return movie;
+        //     },0);
+        // },
+        filterGenre: function(genre){ 
 
-  // }
-    })();
+            return moviesArray.filter((movie) =>
+            movie.genres.some((genres) => genres == genre))
+            .map(movie => {
+            // var genreList = Object.assign({}, movie); 
+            return movie;
+            },0);
+        },
+
+
+    };
+
+})();
+
+document.getElementById('add').addEventListener('click', movieDatabase.getUserInput);
+document.getElementById('showMovies').addEventListener('click', movieDatabase.showAllMovies);
+document.getElementById('getGenre').addEventListener('change', movieDatabase.inputGenre);
 
 function printMovieDatabase(){
-    console.log(movieDatabase.getAllMovies());
-    console.log(movieDatabase.getGenre);
+
+// console.log(movieDatabase.showAllMovies());
+// console.log(movieDatabase.getGenre(movieDatabase.moviesArray));
+// console.log(movieDatabase.addNewMovie);
+// console.log(movieDatabase.returnMoviesArray());
+// console.log(movieDatabase.getGenre());
+// console.log(movieDatabase.showGenre());
 }
 
 printMovieDatabase();
 
-// function printOut1(){
-//   console.log(movieDatabase.getGenre("Comedy"));
-// }
 
-// printOut1();
-
-
-var addNewMovie = function(){
-    // console.log("click");
-    var title = document.getElementById('title').value
-    var year = document.getElementById('year').value
-    var cover = document.getElementById('cover').value
-    var genres = document.getElementById('genres').value
-    var ratings = document.getElementById('ratings').value
-    var actors = document.getElementById('actors').value
-
-
-// fetch('http://fend16.azurewebsites.net/albums/' + id,
-// {
-//     method: "PATCH",
-//     body: JSON.stringify({title: title, artist: artist}), 
-//     headers: {
-//         "Content-Type": "application/json" //specificera header
-//     }
-// })
-//         .then(function(response){    
-//             console.log(response.json());
-//         return response;
-        
-
-// })
-
-};
-
-
-document.getElementById('add').addEventListener('click', addNewMovie);
+// function inputGenre(choice){ 
+//         var userChoice = movieDatabase.filterGenre(choice.target.value);
+//         // var lisst = getGenre();
+//         console.log(choice.target.value);
+//         console.log(userChoice);
+//         movieDatabase.showGenre(userChoice);    
+//     };
 
 
 
@@ -182,9 +219,6 @@ document.getElementById('add').addEventListener('click', addNewMovie);
 // 4. Sortera ut filmer efter vissa kriterier så som: högst rating, 
 // sämst rating och filtrerat baserat på genre.
 // 5. Lägga till och ta bort genres från en film
-
-
-
 
 
 

@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- META -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Movie Database</title>
+
+	<!-- ICONS -->
+<!-- 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+	<!-- CSS -->
+<!-- 	<link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+</head>
+	<body>
+		<header>
+		</header>
+			<main>
+			<section class="box-wrapper">
+				<section class="box-left">
+					<p>Movie Database</p>
+					<button id="showMovies">Show all movies</button>
+		      	</section>
+
+		      	<section class="box-middle">
+				<p>Sort movies by genre</p>
+					<select id="getGenre">
+					  <option value="Comedy">Comedy</option>
+					  <option value="Drama">Drama</option>
+					  <option value="Family">Family</option>
+					  <option value="Horror">Horror</option>
+					  <option value="Sci-Fi">Sci-Fi</option>
+					</select>
+
+		      	</section>
+				<section class="box-right">
+			      	<p>Add new movie title:<br>
+			      	<input type="text" id="title">
+			      	<p>Add year:<br>
+			      	<input type="text" id="year">
+			      	<p>Add cover:<br>
+			      	<input type="text" id="cover">
+			      	<p>Add genres:<br>
+			      	<input type="text" id="genres">
+			      	<p>Add ratings:<br>
+			      	<input type="text" id="ratings">
+			      	<p>Add actors:<br>
+			      	<input type="text" id="actors">
+			      	</p>
+			      	<button id="add">Add movie</button>
+		      	</section>
+
+		      	<section class="box-right-ratings">
+			      	<p>Add ratings:<br>
+			      	<input type="text" id="input_ratings">
+			      	<button id="add-ratings">Add ratings</button>
+		      	</section>
+
+		      	<section class="box-right-genres">
+			      	<p>Add Genre:<br>
+			      	<input type="text" id="input-genres">
+			      	<button id="add-genres">Add Genres/button>
+		      	</section>
+		      </section>
+
+		   	<section class="bottom-wrapper">
+		      	<section class="box-bottom">
+				 	<ul id="movieList"></ul>
+		      	</section>
+		    </section>
+     		
+
+<!--         <button type="button" onclick="getAlbumsFromAPI()">POST</button> -->
+
+<!-- <button id="patch" onclick="patchAlbumAPI(document.getElementById('album').value,document.getElementById('title').value,document.getElementById('idnr').value)">PATCH</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+			</section>
+
+
+
+			</main>
+		<footer>
+		</footer>
+	<script src="script/main_c3.js"></script>
+	</body>
+</html>
 
