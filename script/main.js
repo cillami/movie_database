@@ -220,9 +220,6 @@ var moviesArray = [
             console.log("high click")
             for (var i = 0; i < moviesArray.length; i++) {
                 var highRatList = moviesArray[i].ratings;
-                // if (bajs <= 5){
-                //     console.log(moviesArray[i].title + " " + moviesArray[i].title)
-                // }
             var highRating = highRatList.reduce((total, rating) => {
                     return total + rating;
             }, 0);
@@ -230,35 +227,7 @@ var moviesArray = [
             if (highRating >= 6){
                 console.log(moviesArray[i].title + "what" + highRating);
             }
-            // console.log(moviesArray[i].ratings + "what" + highRating);
-// var tott = 0;
-// for (var i = 0; i < moviesArray[i].ratings.length; i++) {
-// if (moviesArray[i].ratings <= 5){
-//    tott++; 
-// }
- 
 
-// }
-// console.log(tott);
-
-
-//   var numberSelected = 0;
-//   for (var i = 0; i < selectObject.options.length; i++) {
-//     if (selectObject.options[i].selected) {
-//       numberSelected++;
-//     }
-//   }
-//   return numberSelected;
-// }
-
-
-                // if (highRating = 6){
-                //     console.log(moviesArray[i].title + " " + highRating);
-                //     document.getElementById("hej").innerHTML = moviesArray[i].title + " " + highRating;
-                // }
-                // else{
-                //     false;
-                // }
             }},
         
     
