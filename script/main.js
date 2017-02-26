@@ -1,3 +1,4 @@
+
 var movieDatabase = (function(){
 
 var moviesArray = [
@@ -7,7 +8,7 @@ var moviesArray = [
     year: 2015,
     cover: "https://media.senscritique.com/media/000011963740/source_big/The_Lobster.jpg",
     genres: ["Comedy", "Drama", "Romance", "Sci-Fi"],
-    ratings: [8,2],
+    ratings: [4, 5, 6, 7],
     actors: [
     {
         name: "Colin Farrell"
@@ -23,7 +24,7 @@ var moviesArray = [
     year: 1985,
     cover: "https://s-media-cache-ak0.pinimg.com/564x/50/c0/4f/50c04f97966de0ed73262de082aae11d.jpg",
     genres: ["Adventure", "Comedy", "Family"],
-    ratings: [4,5],
+    ratings: [8, 9, 10],
     actors: [
     {
         name: "Sean Astin"
@@ -39,7 +40,7 @@ var moviesArray = [
     year: 2003,
     cover: "https://images-na.ssl-images-amazon.com/images/I/51PD8CBP6XL.jpg",
     genres: ["Comedy", "Drama", "Romance"],
-    ratings: [4,5],
+    ratings: [2, 4],
     actors: [
     {
         name: "Hugh Grant"
@@ -55,7 +56,7 @@ var moviesArray = [
     year: 1980,
     cover: "http://spartanoracle.com/wp-content/uploads/2015/10/shining-2.jpg",
     genres: ["Drama", "Horror"],
-    ratings: [4,5],
+    ratings: [8, 10, 10, 5],
     actors: [
     {
         name: "Hugh Grant"
@@ -71,7 +72,7 @@ var moviesArray = [
     year: 2016,
     cover: "http://cdn.a24films.com/assets/MOONLIGHT-QUOTEPOSTER-WEB.jpg",
     genres: ["Drama"],
-    ratings: [5,2],
+    ratings: [10, 9, 8],
     actors: [
     {
         name: "Mahershala Ali"
@@ -130,12 +131,33 @@ var moviesArray = [
             }
         },
 
+        showYear: function(userYear){
+            console.log("cloooock");
+     
+            movieList.innerHTML = "";
+            for (var i = 0; i < userYear.length ;i++){
+                var html = `<div class="movies-html">
+                <div class="movies-html-left">
+                 <p><img src="${userYear[i].cover}" class="img"> </p>
+                 </div>
+                <div class="movies-html-left">
+                 <p>Movie Title : ${userYear[i].title}</p>
+                 <p>Release Year : ${userYear[i].year} </p>
+                 <p>Genres : ${userYear[i].genres} </p>
+                 <p>Ratings : ${userYear[i].ratings} </p>
+                 <br>
+                 </div>
+                </div>`;
+            movieList.innerHTML += html;
+            }
+        },
+
         movieConstructor: function(title, year, cover, genres, ratings, actors){
             this.title = title;
             this.year = year;
             this.cover = cover;
-            this.genres = genres.split(" ");
-            this.ratings = ratings.split(" ");
+            this.genres = genres.split('\n');
+            this.ratings = ratings.split('\n');
             this.actors = actors;
         },
 
@@ -149,29 +171,29 @@ var moviesArray = [
             var actors = document.getElementById('actors').value
 
             var newMovie = new movieDatabase.movieConstructor(title, year, cover, genres, ratings, actors);
-            moviesArray.push(newMovie); 
+            movieDatabase.pushMovie(newMovie); 
+        },
+
+        pushMovie: function(movie){
+
+            console.log("clcick" + movie)
+            var newMoviesArray = moviesArray;
+            newMoviesArray.push(movie);
+            moviesArray = newMoviesArray;
+ 
+            // moviesArray.push(newMovie); 
         },
 
 
         inputGenre: function(choice){ 
-        var userChoice = movieDatabase.filterGenre(choice.target.value);
-        // var lisst = getGenre();
-        console.log(choice.target.value);
-        console.log(userChoice);
-        movieDatabase.showGenre(userChoice);    
+            var userChoice = movieDatabase.filterGenre(choice.target.value);
+            // var lisst = getGenre();
+            console.log(choice.target.value);
+            console.log(userChoice);
+            movieDatabase.showGenre(userChoice);    
         },
 
-        // filterGenre: function(genre){ 
-
-        //     return moviesArray.filter((movie) =>
-        //     movie.genres.some((genres) => genres == genre))
-        //     .map(movie => {
-        //     // var genreList = Object.assign({}, movie); 
-        //     return movie;
-        //     },0);
-        // },
         filterGenre: function(genre){ 
-
             return moviesArray.filter((movie) =>
             movie.genres.some((genres) => genres == genre))
             .map(movie => {
@@ -180,6 +202,96 @@ var moviesArray = [
             },0);
         },
 
+        inputYear: function(choice){ 
+            var userYear = movieDatabase.sortMovieByYear(choice.target.value);
+            // var lisst = getGenre();
+            console.log(choice.target.value);
+            movieDatabase.showYear(userYear);    
+        },
+
+        sortMovieByYear: function(year){
+            console.log("clack")
+        return moviesArray.filter((movie) => {
+            return movie.year == year;
+        });
+    }, 
+
+        showHighRatings: function(){
+            console.log("high click")
+            for (var i = 0; i < moviesArray.length; i++) {
+                var highRatList = moviesArray[i].ratings;
+                // if (bajs <= 5){
+                //     console.log(moviesArray[i].title + " " + moviesArray[i].title)
+                // }
+            var highRating = highRatList.reduce((total, rating) => {
+                    return total + rating;
+            }, 0);
+
+            if (highRating >= 6){
+                console.log(moviesArray[i].title + "what" + highRating);
+            }
+            // console.log(moviesArray[i].ratings + "what" + highRating);
+// var tott = 0;
+// for (var i = 0; i < moviesArray[i].ratings.length; i++) {
+// if (moviesArray[i].ratings <= 5){
+//    tott++; 
+// }
+ 
+
+// }
+// console.log(tott);
+
+
+//   var numberSelected = 0;
+//   for (var i = 0; i < selectObject.options.length; i++) {
+//     if (selectObject.options[i].selected) {
+//       numberSelected++;
+//     }
+//   }
+//   return numberSelected;
+// }
+
+
+                // if (highRating = 6){
+                //     console.log(moviesArray[i].title + " " + highRating);
+                //     document.getElementById("hej").innerHTML = moviesArray[i].title + " " + highRating;
+                // }
+                // else{
+                //     false;
+                // }
+            }},
+        
+    
+
+    
+    showLowRatings: function(){
+            console.log("low click");
+            for (let i = 0; i < moviesArray.length; i++) {
+                let lowRatList = moviesArray[i].ratings;
+            let lowRating = lowRatList.reduce((total, rating) => {
+                    return total + rating;
+            }, 0);
+                 if(lowRating <= 5){
+                    console.log(moviesArray[i].title + " " +lowRating);
+                }
+            }
+    },
+
+        meanRating: function(){
+            for (let i = 0; i < moviesArray.length; i++) {
+                let ratList = moviesArray[i].ratings;
+                let meanRating = ratList.reduce((total, rating) => {
+                    return total + rating;
+                }, 0);
+                    let numberOfRatings = ratList.length;
+                    let emptyRatingList = moviesArray[i].ratings;
+                        while (emptyRatingList.length) { 
+                            emptyRatingList.pop(); 
+                        }
+                        let meanmeanRating = emptyRatingList.push(meanRating/numberOfRatings);
+                        // return moviesArray, obs levererar bara ett värde
+            }
+    },
 
     };
 
@@ -188,15 +300,28 @@ var moviesArray = [
 document.getElementById('add').addEventListener('click', movieDatabase.getUserInput);
 document.getElementById('showMovies').addEventListener('click', movieDatabase.showAllMovies);
 document.getElementById('getGenre').addEventListener('change', movieDatabase.inputGenre);
+document.getElementById('getYear').addEventListener('change', movieDatabase.inputYear);
+
+
+document.getElementById('showHighRatings').addEventListener('click', movieDatabase.showHighRatings);
+document.getElementById('showLowRatings').addEventListener('click', movieDatabase.showLowRatings);
+
 
 function printMovieDatabase(){
 
 // console.log(movieDatabase.showAllMovies());
 // console.log(movieDatabase.getGenre(movieDatabase.moviesArray));
 // console.log(movieDatabase.addNewMovie);
-// console.log(movieDatabase.returnMoviesArray());
+console.log(movieDatabase.returnMoviesArray());
 // console.log(movieDatabase.getGenre());
 // console.log(movieDatabase.showGenre());
+// console.log(movieDatabase.rating());
+console.log(movieDatabase.meanRating());
+// console.log(movieDatabase.sortMovieByYear(2016));
+// console.log(movieDatabase.pushRating());
+// console.log(movieDatabase.ratingMean());
+// console.log(movieDatabase.getBla());
+//visar bara sista filmens array av ratings
 }
 
 printMovieDatabase();
