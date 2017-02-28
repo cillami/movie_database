@@ -177,12 +177,16 @@ var moviesArray = [
             movieDatabase.addBtnEventListenersRemoveGenre();
             }
         },
-/*----------  hann inte slutföra dessa funktioner  ----------*/    
+/*--------------------------*/ 
+//hann inte slutföra dessa funktioner  
 //jag vill koppla mina knappar och inputfält som ligger i template literal till nya funktioner
         addBtnEventListenersAddRating: () => {
+            //querySelctorAll hämtar alla knappar med klassen .add-rating-btn
             var addRatingBtn = document.querySelectorAll('.add-rating-btn');
+            //här loopas item igenom för att kopplas ihop med rätt knapp 
             addRatingBtn.forEach(function(item){
             item.addEventListener('click', movieDatabase.pushInRating);
+            //addBtnEventListener-klicket aktiverar pushInRating funktionen
             });
         },
         addBtnEventListenersAddGenre: () => {
@@ -199,6 +203,7 @@ var moviesArray = [
         },
         pushInRating: () => {
         let idInputRating = document.getElementById(this.dataset.inputid).value;
+        //värdet som hämtas från inputfältet sparas ned i en variabel
         // console.log("this id >> " + this.id);
         // console.log("this dataset inputid >> " + this.dataset.inputid);  
         // console.log("idInputRating >> " +idInputRating);
@@ -209,8 +214,7 @@ var moviesArray = [
         pushInGenreRemove: () => {
         let idInputRemoveGenre = document.getElementById(this.dataset.inputid).value;
         },
-/*----------------------------------------------------------------*/  
-        
+/*--------------------------*/      
         // MOVIE CONSTRUCTOR 
 
         //konstruktorfunktion som skapar objekt 
