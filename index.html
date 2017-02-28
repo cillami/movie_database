@@ -15,13 +15,14 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css"> 
 </head>
 	<body>
-		<header>
+		<header class="header">
+					<h1>Movie Database</h1>
 		</header>
 			<main>
 			<section class="box-wrapper">
 				<section class="box-left">
-					<p>Movie Database</p>
-					<button id="showMovies">Show all movies</button>
+					<p>Show all movies</p>
+					<button id="showMovies">Push me!</button>
 		      	</section>
 
 		      	<section class="box-middle">
@@ -33,7 +34,11 @@
 					  <option value="Horror">Horror</option>
 					  <option value="Sci-Fi">Sci-Fi</option>
 					</select>
+<!-- 				<section class="box-middle-year"> -->
 
+			<!-- 	</section> -->
+		      	</section>
+				<section class="box-right">
 					<p>Sort movies by year</p>
 					<select id="getYear">
 					  <option value="2016">2016</option>
@@ -42,10 +47,11 @@
 					  <option value="2013">2013</option>
 					  <option value="2012">2012</option>
 					</select>
-
 		      	</section>
-				<section class="box-right">
-			      	<p>Add new movie title:<br>
+
+		      	<section class="box-right-movie">
+		      		<p>Add a movie to the database</p>
+			      	<p>Add title:<br>
 			      	<input type="text" id="title">
 			      	<p>Add year:<br>
 			      	<input type="text" id="year">
@@ -54,66 +60,34 @@
 			      	<p>Add genres:<br>
 			      	<input type="text" id="genres">
 			      	<p>Add rating (1-10):<br>
-			      	<input type="text" id="ratings">
-			      	<p>Add actors:<br>
-			      	<input type="text" id="actors">
-			      	</p>
+			      	<input type="text" id="ratings"><p>
+		<!-- 	      	<p>Add actors:<br>
+			      	<input type="text" id="actors"><p> -->
 			      	<button id="add">Add movie</button>
-		      	</section>
 
-		      	<section class="box-right-ratings">
-			      	<p>Show ratings<p>
+		      	</section>
+		      	<section class="box-right-genres">
+			 		<p>Show ratings<p>
 			      <!-- 	<input type="text" id="input_ratings"> -->
-			      	<p>between 6-10</p>
-			      	<button id="showHighRatings">Show high rated movies</button>
+<!-- 			      	<p>between 6-10</p>
+			      	<button id="showHighRatings">High rated movies</button>
 			      	<p>
 			      	<p>Between 1-5</p>
-			      	<button id="showLowRatings">Show low rated movies</button>
+			      	<button id="showLowRatings">Low rated movies</button> -->
+			      	<p>Highest rated movie</p>
+			      	<button id="showMaxRating">Max</button>
+			      	<p>
+			      	<p>Lowest rated movie</p>
+			      	<button id="showMinRating">Min</button>
 		      	</section>
-
-		      	<section class="box-right-genres">
-			      	
-
-			   		<p>Bla bli blo</p>
-	
-		      	
-
-		      	</section>
-
-
-
 		      </section>
-
 		   	<section class="bottom-wrapper">
 		      	<section class="box-bottom">
-				 	<ul id="movieList"></ul>
-				 	<ul id="hej"></ul>
+					<section id="movieList"></section>
 		      	</section>
 		    </section>
-     		
-
-<!--         <button type="button" onclick="getAlbumsFromAPI()">POST</button> -->
-
-<!-- <button id="patch" onclick="patchAlbumAPI(document.getElementById('album').value,document.getElementById('title').value,document.getElementById('idnr').value)">PATCH</button> -->
-
-
-
-
-
-
-
-
-
-
-
-
 			</section>
-
-
-
 			</main>
-		<footer>
-		</footer>
 	<script src="script/main.js"></script>
 	</body>
 </html>

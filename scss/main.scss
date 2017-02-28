@@ -6,7 +6,10 @@ html, body {
 	padding: 0;
 }
 
-
+.header h1{
+	margin:1rem;
+	margin-bottom: 0rem;
+}
 
 .box-wrapper {
 	display:flex;
@@ -16,7 +19,7 @@ html, body {
 
 }
 .box-left {
-	background-color: lightblue;
+	border: 1px solid black;
 	width:20%;
 	margin: 1rem;
 	padding:1rem;
@@ -24,28 +27,34 @@ html, body {
 
 }
 .box-middle {
-	background-color: teal;
+	border: 1px solid black;
 	width:20%;
+	margin: 1rem;
+	padding:1rem;
+
+}
+.box-middle-year {
+	border: 1px solid black;
 	margin: 1rem;
 	padding:1rem;
 
 }
 .box-right {
-	background-color: lightsalmon;
+	border: 1px solid black;
 	width:20%;
 	margin: 1rem;
 	padding:1rem;
 }
 
-.box-right-ratings{
-	background-color: lightyellow;
+.box-right-movie {
+	border: 1px solid black;
 	width:20%;
 	margin: 1rem;
 	padding:1rem;
 }
 
 .box-right-genres {
-	background-color: lightgrey;
+	border: 1px solid black;
 	width:20%;
 	margin: 1rem;
 	padding:1rem;
@@ -55,32 +64,35 @@ html, body {
 	display:flex;
 	width:100%;
 	justify-content: center;
-/*	flex-direction: row;*/
-/*	background-color: lightgreen;*/
- 
 }
+
+
 .box-bottom{
 	width:50%;
-/*	flex-direction: row;*/
-/*	background-color: lightyellow;*/
- 
 }
 
 .movies-html {
-	background-color: white;
-	width:80%;
+	width:100%;
+	list-style-type: none;
 	display:flex;
 }
 
 .movies-html .img {
 	width: 80%;
-
+	padding: 0 1rem;
 }
 .movies-html-left {
-	background-color: white;
+  	background: lightgrey;
+	width:30%;
+	margin-bottom: 1.5rem;
+}
+.movies-html-middle {
+ 	background: lightgrey;
 	width:40%;
+	margin-bottom: 1.5rem;
 }
 .movies-html-right {
-	background-color: white;
-	width:60%;
+   	background: lightgrey;
+	width:50%;
+	margin-bottom: 1.5rem;
 }
