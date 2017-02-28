@@ -203,7 +203,7 @@ var moviesArray = [
         },
         pushInRating: () => {
         let idInputRating = document.getElementById(this.dataset.inputid).value;
-        //värdet som hämtas från inputfältet sparas ned i en variabel
+        //value som hämtas in i från inputfältet sparas ned i en variabel
         // console.log("this id >> " + this.id);
         // console.log("this dataset inputid >> " + this.dataset.inputid);  
         // console.log("idInputRating >> " +idInputRating);
