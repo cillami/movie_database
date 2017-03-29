@@ -221,22 +221,10 @@ var moviesArray = [
                 
                 </div>`;
 
-                // let bla = [];
-                // let arr = moviesArray[i].actors;
-                //     for (var j = 0; j < arr.length; j++) {
-                //         bla.push(arr[j].name);
-                //     }  
-                // showHTML += ` 
-                // <p>Actors: ${bla.join(", ")}</p>
-                // <p>Ratings: ${moviesArray[i].ratings.join(", ")} </p>
-                // <p>Avrage rating: ${moviesArray[i].average} </p>
-
-
             // showHTML läggs till på id movielist och visas på indexsidan genom innerHTML
             movieList.innerHTML = showHTML;
             }
         },
-
 /*--------------------------*/      
         // MOVIE CONSTRUCTOR 
 
@@ -246,11 +234,8 @@ var moviesArray = [
             this.title = title;
             this.year = year;
             this.cover = cover;
-            this.genres = [genres];
+            this.genres = genres.split(", ");
             this.ratings = ratings;
-
-            //split delar upp strängar till delar i en array 
-            // this.actors = actors;
         },
 
         //hämtar värden från inputfältet på indexsidan, value kopplas till variablerna
@@ -512,15 +497,5 @@ document.getElementById('addRating').addEventListener('change', movieDatabase.ad
 };
 })(); //här tar module pattern objektet slut
 
-//all interaktion som sker på indexsidan kickar igång funktionerna i addEventListener
-
-
-// function printMovieDatabase(){
-// console.log(movieDatabase.averageRating());
-// console.log(movieDatabase.addEvent());
-// //kalla på den när jag lägger till en ny film
-// }
-// printMovieDatabase();
-
 movieDatabase.averageRating();
- movieDatabase.addEvent();
+movieDatabase.addEvent();
