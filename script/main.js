@@ -280,10 +280,10 @@ var moviesArray = [
             // movieDatabase.averageRating();
         },
 
+
         inputAllMovies: () => { 
             //sends moviesArray to the showAllMovies function (to display it on index.html)
             movieDatabase.showAllMovies(moviesArray); 
-            // movieDatabase.averageRating();  
         },
 
         inputGenre: (choice) => { 
@@ -309,8 +309,6 @@ var moviesArray = [
            }
            return filteredGenres;
         },
-
-
 
         inputYear: function (choice) { 
             //we send the users choice (value) to the sortMovieByYear function and then we send the 
@@ -341,7 +339,6 @@ var moviesArray = [
         showMaxRating: () => {
             var averageRatings = [];
             var allAverageRatings = [];
-
                 for (let i = 0; i < moviesArray.length; i++) {
             //tar ut alla average ur moviesArray
                     averageRatings = moviesArray[i].average;
@@ -364,33 +361,23 @@ var moviesArray = [
             });
         },
 
-        //the same functions as above (minimum movie rating)
+        //the same functions as above (minimum average rating)
         inputMinRatings: () => {
             const minRating = movieDatabase.showMinRating();
             movieDatabase.showAllMovies(minRating);   
             },
-
+        //the same functions as above (minimum average rating)
         showMinRating: () => {
             var averageRatings = [];
             var allAverageRatings = [];
-            //loopar igenom moviesArrayen 
                 for (let i = 0; i < moviesArray.length; i++) {
-            //tar ut alla average ur moviesArray
                     averageRatings = moviesArray[i].average;
-              
-            //säkerställa så att arrayen inte är tom
                 if (moviesArray[i].average.length !== 0){
                     //pushar in dem i en array en efter en
                     allAverageRatings.push(averageRatings)
-
                 }
             }
-            //math.min går igenom total-arrayen och tar ut det lägsta värdet
-
             var min = Math.min(...allAverageRatings);
-            //hämtar ut avrage ur moviesArray genom filter och jämför
-            //average med min-värdet. pushar in det i en ny aray och returnerar.
-
             var finalAverageRatings=[];
             return moviesArray.filter((movie) => {
                 if(movie.average == min){
@@ -407,19 +394,23 @@ var moviesArray = [
             },
 
         addGenre: function () {
+            //get user input
             let getTitle = document.getElementById("getTitle").value;
             let addGenre = document.getElementById("addGenre").value;  
 
             let addGenreObj = {};
             var addedToMovieArray= [];
-
+            //loops through moviesArray to check if title matches the user input value
             for (var i = 0; i < moviesArray.length; i++) {
                 if (moviesArray[i].title === getTitle) {
                     addGenreObj = moviesArray[i];
                 }
             } 
+            //loops through moviesArray/genres to check if user input value matches
+            //indexOf checks the array 
             for (var j = 0; j < addGenreObj.genres.length; j++) {
                     if(addGenreObj.genres.indexOf(addGenre) === -1){
+                        //I added an if-statement - since the selectors first value is empty ("")
                         if(addGenre === ""){
                             console.log("space")
                         }
@@ -435,22 +426,22 @@ var moviesArray = [
         },
 
         removeGenre: function () {
-            console.log("Fattty")
             let getTitle = document.getElementById("getTitle").value;
             let removeGenre = document.getElementById("removeGenre").value;
        
             var removedIt ={};
             var finalRemoved = [];
-
+            //loops through moviesArray to check if title matches the user input value
             for (var i = 0; i < moviesArray.length; i++) {
+
                 if (moviesArray[i].title === getTitle) {
                     removedIt = moviesArray[i];
                 }
             } 
             for (var j = 0; j < removedIt.genres.length; j++) {
-                //index av genre[i]
                 if (removedIt.genres[j] == removeGenre){
-                    //hittar rätt genre
+                    //checks if removeGenre is in the array
+                    //then splice it off the array
                     removedIt.genres.splice(j, 1);
                     finalRemoved.push(removedIt);
                     movieDatabase.showAllMovies(finalRemoved); 
@@ -460,17 +451,19 @@ var moviesArray = [
         },
 
         addRating: function () {
+                        //get user input
             let getTitle = document.getElementById("getTitle").value;
             let ratingFromUser = document.getElementById("addRating").value;
             
             let addRating ={};
             let finalAdd = [];
-
+            //loops through moviesArray to check if title matches the user input value
             for (var i = 0; i < moviesArray.length; i++) {
                 if (moviesArray[i].title === getTitle) {
                     addRating = moviesArray[i];
                 }
-            }               
+            }          
+            //adds the rating and turns it in to a number(parseInt)     
                 addRating.ratings.push(parseInt(ratingFromUser));
                 finalAdd.push(addRating)
                 movieDatabase.showAllMovies(finalAdd); 
@@ -522,11 +515,12 @@ document.getElementById('addRating').addEventListener('change', movieDatabase.ad
 //all interaktion som sker på indexsidan kickar igång funktionerna i addEventListener
 
 
-function printMovieDatabase(){
-console.log(movieDatabase.averageRating());
-console.log(movieDatabase.addEvent());
-//kalla på den när jag lägger till en ny film
-}
-printMovieDatabase();
+// function printMovieDatabase(){
+// console.log(movieDatabase.averageRating());
+// console.log(movieDatabase.addEvent());
+// //kalla på den när jag lägger till en ny film
+// }
+// printMovieDatabase();
 
- 
+movieDatabase.averageRating();
+ movieDatabase.addEvent();
