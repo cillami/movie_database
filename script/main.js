@@ -10,28 +10,40 @@ var movieDatabase = (function(){
 var moviesArray = [
 
 {
-    title: "The Lobster",
+// Dope har ingen rating/average-rating och ska INTE bli worst rated movie = fixat.
+    title: "Dope",
     year: 2015,
-    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BNDQ1NDE5NzQ1NF5BMl5BanBnXkFtZTgwNzA5OTM2NTE@._V1_SY1000_CR0,0,705,1000_AL_.jpg",
-    genres: ["Comedy", "Drama", "Romance", "Sci-Fi"],
-    ratings: [4, 5, 6, 7, 8, 10],
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3MjYyNTk0Nl5BMl5BanBnXkFtZTgwODc1NzQ1NTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    genres: ["Comedy", "Crime", "Drama"],
+    ratings: [],
     average: [],
-    idButtonAddRating: "the-lobster-button-add-rating",
-    idButtonAddGenre: "the-lobster-button-add-genre",
-    idButtonRemoveGenre: "the-lobster-button-remove-genre",
-    idInputRating: "the-lobster-input-rating",
-    idInputAddGenre: "the-lobster-input-add-genre",
-    idInputRemoveGenre: "the-lobster-input-remove-genre",
+    id: "dope",
     actors: [
     {
-        name: "Colin Farrell"
+        name: "Shameik Moore"
     },
     {
-        name: "Rachel Weisz"
+        name: "Tony Revolori"
     }
     ]
 },
-
+{
+    title: "Ex Machina",
+    year: 2014,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    genres: ["Drama", "Mystery", "Sci-Fi", "Thriller"],
+    ratings: [10, 9, 8],
+    average: [],
+    id: "ex-machina",
+    actors: [
+    {
+        name: "Alicia Vikander"
+    },
+    {
+        name: "Domhnall Gleeson"
+    }
+    ]
+},
 {
     title: "The Goonies",
     year: 1985,
@@ -39,12 +51,7 @@ var moviesArray = [
     genres: ["Adventure", "Comedy", "Family"],
     ratings: [8, 9, 10],
     average: [],
-    idButtonAddRating: "the-goonies-button-add-rating",
-    idButtonAddGenre: "the-goonies-button-add-genre",
-    idButtonRemoveGenre: "the-goonies-button-remove-genre",
-    idInputRating: "the-goonies-input-rating",
-    idInputAddGenre: "the-goonies-input-add-genre",
-    idInputRemoveGenre: "the-goonies-input-remove-genre",
+    id: "the-goonies",
     actors: [
     {
         name: "Sean Astin"
@@ -56,41 +63,31 @@ var moviesArray = [
 },
 
 {
-    title: "Love Actually",
-    year: 2003,
-    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY4NjQ5NDc0Nl5BMl5BanBnXkFtZTYwNjk5NDM3._V1_.jpg",
-    genres: ["Comedy", "Drama", "Romance"],
-    ratings: [2, 4],
+    title: "The Lobster",
+    year: 2015,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BNDQ1NDE5NzQ1NF5BMl5BanBnXkFtZTgwNzA5OTM2NTE@._V1_SY1000_CR0,0,705,1000_AL_.jpg",
+    genres: ["Comedy", "Drama", "Romance", "Sci-Fi"],
+    ratings: [4, 5, 6, 7, 8, 10],
     average: [],
-    idButtonAddRating: "love-actually-button-add-rating",
-    idButtonAddGenre: "love-actually-button-add-genre",
-    idButtonRemoveGenre: "love-actually-button-remove-genre",
-    idInputRating: "love-actually-input-rating",
-    idInputAddGenre: "love-actually-input-add-genre",
-    idInputRemoveGenre: "love-actually-input-remove-genre",
+    id: "the-lobster",
     actors: [
     {
-        name: "Hugh Grant"
+        name: "Colin Farrell"
     },
     {
-        name: "Emma Thompson"
+        name: "Rachel Weisz"
     }
     ]
 },
 
 {
-    title: "The Shining",
-    year: 1980,
-    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    genres: ["Drama", "Horror"],
-    ratings: [8, 10, 10, 5],
+    title: "Love Actually",
+    year: 2003,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY4NjQ5NDc0Nl5BMl5BanBnXkFtZTYwNjk5NDM3._V1_.jpg",
+    genres: ["Comedy", "Drama", "Romance"],
+    ratings: [4, 7],
     average: [],
-    idButtonAddRating: "the-shining-button-add-rating",
-    idButtonAddGenre: "the-shining-button-add-genre",
-    idButtonRemoveGenre: "the-shining-button-remove-genre",
-    idInputRating: "the-shining-input-rating",
-    idInputAddGenre: "the-shining-input-add-genre",
-    idInputRemoveGenre: "the-shining-input-remove-genre",
+    id: "love-actually",
     actors: [
     {
         name: "Hugh Grant"
@@ -106,14 +103,9 @@ var moviesArray = [
     year: 2016,
     cover: "http://cdn.a24films.com/assets/MOONLIGHT-QUOTEPOSTER-WEB.jpg",
     genres: ["Drama"],
-    ratings: [10, 9, 8],
+    ratings: [10, 9, 10],
     average: [],
-    idButtonAddRating: "moonlight-button-add-rating",
-    idButtonAddGenre: "moonlight-button-add-genre",
-    idButtonRemoveGenre: "moonlight-button-remove-genre",
-    idInputRating: "moonlight-input-rating",
-    idInputAddGenre: "moonlight-input-add-genre",
-    idInputRemoveGenre: "moonlight-input-remove-genre",
+    id: "moonlight",
     actors: [
     {
         name: "Mahershala Ali"
@@ -122,7 +114,78 @@ var moviesArray = [
         name: "Shariff Earp"
     }
     ]
+},
+
+{
+    title: "Sameblod",
+    year: 2016,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BNTM4NmZjNWItM2JjNS00Y2Q3LWI0NzUtZDRjZjZlYWJlNjhhXkEyXkFqcGdeQXVyMzM0MjEwNzQ@._V1_SY1000_CR0,0,699,1000_AL_.jpg",
+    genres: ["Drama"],
+    ratings: [10,8,5],
+    average: [],
+    id: "sameblod",
+    actors: [
+    {
+        name: "Lene Cecilia Sparrok"
+    },
+    {
+        name: "SMia Erika Sparrok"
+    }
+    ]
+},
+
+{
+    title: "The Shining",
+    year: 1980,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    genres: ["Drama", "Horror"],
+    ratings: [8, 10, 10, 5],
+    average: [],
+    id: "the-shining",
+    actors: [
+    {
+        name: "Hugh Grant"
+    },
+    {
+        name: "Emma Thompson"
+    }
+    ]
+},
+{
+    title: "Spirited Away",
+    year: 2001,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjYxMDcyMzIzNl5BMl5BanBnXkFtZTYwNDg2MDU3._V1_.jpg",
+    genres: ["Adventure", "Anime", "Family"],
+    ratings: [10, 10, 8, 9],
+    average: [],
+    id: "spirited-away",
+    actors: [
+    {
+        name: "Rumi Hiiragi"
+    },
+    {
+        name: "Miyu Irino"
+    }
+    ]
+},
+{
+    title: "The SpongeBob Movie: Sponge Out of Water",
+    year: 2015,
+    cover: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjYyNDczNTE0MF5BMl5BanBnXkFtZTgwNjkzNDYxMzE@._V1_SY1000_CR0,0,640,1000_AL_.jpg",
+    genres: ["Adventure", "Comedy", "Family", "Kids"],
+    ratings: [8, 7, 8],
+    average: [],
+    id: "spongebob",
+    actors: [
+    {
+        name: "Antonio Banderas"
+    },
+    {
+        name: "Eric Bauza"
+    }
+    ]
 }
+
 ];
 
     return {
@@ -137,83 +200,43 @@ var moviesArray = [
             console.log("hela Listan")
         //en tom sträng som ska fyllas med värdet som sparas i showHTML (template literals)
         //for-loopen går igenom varje objekt i arrayen och plussar på showHTML
+        var movieList = document.getElementById("movieList");
         let showHTML = "";
             for (var i = 0; i < moviesArray.length ;i++){
-                showHTML += `<div class="movies-html">
+                showHTML += `
+                <div class="items">
+           
                 <div class="movies-html-left">
-                 <p><img src="${moviesArray[i].cover}" class="img"> </p>
-                 </div>
-                <div class="movies-html-middle">
-                 <p>Movie Title: ${moviesArray[i].title}</p>
-                 <p>Release Year: ${moviesArray[i].year} </p>
-                 <p>Genres: ${moviesArray[i].genres} </p>
-                 <p>Ratings: ${moviesArray[i].ratings} </p>
-                 <p>Avrage rating: ${moviesArray[i].average} </p>
-                 </div>
-                <div class="movies-html-right">
-                
-                <p>Add your rating for this movie: </p>
-                <input type="text" id="${moviesArray[i].idInputRating}">
-                <button class="add-rating-btn" id="${moviesArray[i].idButtonAddRating}" data-inputid="${moviesArray[i].idInputRating}">Add rating</button>
-               
-                <p>Add genre for this movie: </p>
-                <input type="text" id="${moviesArray[i].idInputAddGenre}">
-                <button class="add-genre-btn" id="${moviesArray[i].idButtonAddGenre}" data-inputid="${moviesArray[i].idInputAddGenre}">Add Genre</button>
-                
-                <p>Remove genre for this movie: </p>
-                <input type="text" id="${moviesArray[i].idInputRemoveGenre}">
-                <button class="remove-genre-btn" id="${moviesArray[i].idButtonRemoveGenre}" data-inputid="${moviesArray[i].idInputRemoveGenre}">Remove Genre</button>
-                <p>
+                    <p><img src="${moviesArray[i].cover}" class="img"> </p>
                 </div>
+                
+                <div class="movies-html-right">
+                    <h1>${moviesArray[i].title}</h1>
+                    <p>Release Year: ${moviesArray[i].year} </p>
+                    <p>Genres: ${moviesArray[i].genres.join(", ")} </p>
+                    <p>Ratings: ${moviesArray[i].ratings} </p>
+                    <p>Avrage rating: ${moviesArray[i].average} </p>
+                
+                </div>
+                
                 </div>`;
+
+                // let bla = [];
+                // let arr = moviesArray[i].actors;
+                //     for (var j = 0; j < arr.length; j++) {
+                //         bla.push(arr[j].name);
+                //     }  
+                // showHTML += ` 
+                // <p>Actors: ${bla.join(", ")}</p>
+                // <p>Ratings: ${moviesArray[i].ratings.join(", ")} </p>
+                // <p>Avrage rating: ${moviesArray[i].average} </p>
+
+
             // showHTML läggs till på id movielist och visas på indexsidan genom innerHTML
             movieList.innerHTML = showHTML;
-
-            // <p>Actors: ${moviesArray[i].actors[i].name} </p> 
-
-            //calls the addeventlistener function 
-            movieDatabase.addBtnEventListenersAddRating();
-            movieDatabase.addBtnEventListenersAddGenre();
-            movieDatabase.addBtnEventListenersRemoveGenre();
             }
         },
-/*--------------------------*/ 
-//hann inte slutföra dessa funktioner  
-//jag vill koppla mina knappar och inputfält som ligger i template literal till nya funktioner
-        addBtnEventListenersAddRating: () => {
-            //querySelctorAll hämtar alla knappar med klassen .add-rating-btn
-            var addRatingBtn = document.querySelectorAll('.add-rating-btn');
-            //här loopas item igenom för att kopplas ihop med rätt knapp 
-            addRatingBtn.forEach(function(item){
-            item.addEventListener('click', movieDatabase.pushInRating);
-            //addBtnEventListener-klicket aktiverar pushInRating funktionen
-            });
-        },
-        addBtnEventListenersAddGenre: () => {
-            var addGenreBtn = document.querySelectorAll('.add-genre-btn');
-            addGenreBtn.forEach(function(item){
-            item.addEventListener('click', movieDatabase.pushInGenreAdd);  
-            });
-        },
-        addBtnEventListenersRemoveGenre: () => {
-            var removeGenreBtn = document.querySelectorAll('.remove-genre-btn');
-            removeGenreBtn.forEach(function(item){
-            item.addEventListener('click', movieDatabase.pushInGenreRemove);
-            });
-        },
-        pushInRating: () => {
-        let idInputRating = document.getElementById(this.dataset.inputid).value;
-        //value som hämtas in i från inputfältet sparas ned i en variabel
-        // console.log("this id >> " + this.id);
-        // console.log("this dataset inputid >> " + this.dataset.inputid);  
-        // console.log("idInputRating >> " +idInputRating);
-        },
-        pushInGenreAdd: () => {
-        let idInputAddGenre = document.getElementById(this.dataset.inputid).value;
-        },
-        pushInGenreRemove: () => {
-        let idInputRemoveGenre = document.getElementById(this.dataset.inputid).value;
-        },
+
 /*--------------------------*/      
         // MOVIE CONSTRUCTOR 
 
@@ -223,8 +246,9 @@ var moviesArray = [
             this.title = title;
             this.year = year;
             this.cover = cover;
-            this.genres = genres.split(" ");
-            this.ratings = ratings.split(" ");
+            this.genres = [genres];
+            this.ratings = ratings;
+
             //split delar upp strängar till delar i en array 
             // this.actors = actors;
         },
@@ -242,20 +266,24 @@ var moviesArray = [
             //till det nya objektet som skapas (newMovie)
             var newMovie = new movieDatabase.movieConstructor(title, year, cover, genres, ratings);
             //skickar vidare det nya objektet till pushMovie-funktionen
-            movieDatabase.pushMovie(newMovie); 
+            movieDatabase.pushMovieToDatabase(newMovie); 
+            // movieDatabase.averageRating(); 
         },
 
-        pushMovie: (movie) => {
+        pushMovieToDatabase: (movie) => {
             //pushes the input from the user/from the getUserInput function to the moviesArray.
             //creates a new array and push it into the moviesArray
             let newMoviesArray = moviesArray;
             newMoviesArray.push(movie);
             moviesArray = newMoviesArray;
+
+            // movieDatabase.averageRating();
         },
 
         inputAllMovies: () => { 
             //sends moviesArray to the showAllMovies function (to display it on index.html)
-            movieDatabase.showAllMovies(moviesArray);   
+            movieDatabase.showAllMovies(moviesArray); 
+            // movieDatabase.averageRating();  
         },
 
         inputGenre: (choice) => { 
@@ -282,19 +310,23 @@ var moviesArray = [
            return filteredGenres;
         },
 
-        inputYear: (choice) => { 
+
+
+        inputYear: function (choice) { 
             //we send the users choice (value) to the sortMovieByYear function and then we send the 
             //result from that function to the showAllMovies function. (to display it on index.html)
             let userYear = movieDatabase.sortMovieByYear(choice.target.value);
+            
+
             movieDatabase.showAllMovies(userYear); 
         },
 
         //filter är en funktion som tar en funktion som argument och returnerar en ny filtrerad 
         //version av arrayen. här filtreras en ny array ut dvs movie och property year 
         //de värdena jämförs sedan med den parametern som skickades in 
-        sortMovieByYear: (year) => {
+        sortMovieByYear: (userYear) => {
             return moviesArray.filter((movie) => {
-            return movie.year == year;
+            return movie.year == userYear;
             });
         }, 
 
@@ -307,23 +339,29 @@ var moviesArray = [
             },
 
         showMaxRating: () => {
-            var maxMovies= {};
-            var finalMaxMovies = [];
-                //We take the first value in average as start value
-            var max = moviesArray[0].average;
-            for (var i = 0; i < moviesArray.length; i++){
-                //We then compare every average value to this maximum value
-                //if we find a bigger value, we enter the if-statement
-                if (moviesArray[i].average > max){ 
-                //the value that ends up in maxMovies gets overwritten for each loop, 
-                //that is why we have a finalMaxMovies array
-                maxMovies = moviesArray[i];
-                console.log(maxMovies);
+            var averageRatings = [];
+            var allAverageRatings = [];
+
+                for (let i = 0; i < moviesArray.length; i++) {
+            //tar ut alla average ur moviesArray
+                    averageRatings = moviesArray[i].average;
+       //säkerställa att arrayen inte är tom
+                if (moviesArray[i].average.length !== 0){
+            //pushar in dem i en array
+                    allAverageRatings.push(averageRatings);
                 }
-            }
-            //here we push in the final object into an array to be able to print it out in showAllMovies
-            finalMaxMovies.push(maxMovies);
-            return finalMaxMovies;                       
+            }    
+            //math.max går igenom total-arrayen och tar ut det högsta värdet
+            var max = Math.max(...allAverageRatings);
+            //hämtar ut avrage ur moviesArray genom filter och jämför
+            //average med max-värdet. pushar in det i en ny aray och returnerar.
+            var finalAverageRatings=[];
+            return moviesArray.filter((movie) => {
+                if(movie.average == max){
+                    finalAverageRatings.push(movie) 
+                    console.log(finalAverageRatings)     
+                    return finalAverageRatings;}
+            });
         },
 
         //the same functions as above (minimum movie rating)
@@ -333,65 +371,162 @@ var moviesArray = [
             },
 
         showMinRating: () => {
-            var minMovies= {};
-            var finalMinMovies = [];
-            var min = moviesArray[0].average;
-            for (var i = 0; i < moviesArray.length; i++){
-                if (moviesArray[i].average < min){ 
-                minMovies = moviesArray[i];
+            var averageRatings = [];
+            var allAverageRatings = [];
+            //loopar igenom moviesArrayen 
+                for (let i = 0; i < moviesArray.length; i++) {
+            //tar ut alla average ur moviesArray
+                    averageRatings = moviesArray[i].average;
+              
+            //säkerställa så att arrayen inte är tom
+                if (moviesArray[i].average.length !== 0){
+                    //pushar in dem i en array en efter en
+                    allAverageRatings.push(averageRatings)
+
                 }
             }
-            finalMinMovies.push(minMovies);
-            return finalMinMovies;                       
+            //math.min går igenom total-arrayen och tar ut det lägsta värdet
+
+            var min = Math.min(...allAverageRatings);
+            //hämtar ut avrage ur moviesArray genom filter och jämför
+            //average med min-värdet. pushar in det i en ny aray och returnerar.
+
+            var finalAverageRatings=[];
+            return moviesArray.filter((movie) => {
+                if(movie.average == min){
+                    finalAverageRatings.push(movie)
+                         console.log(finalAverageRatings)     
+                    return finalAverageRatings;}
+            });
         },
 
-        meanRating: () => {
+        inputGetTitle: function (choice) {
+            console.log("click")
+            var getMovieFromUser = movieDatabase.addGenre(choice.target.value);
+            movieDatabase.showAllMovies(getMovieFromUser);
+            },
+
+        addGenre: function () {
+            let getTitle = document.getElementById("getTitle").value;
+            let addGenre = document.getElementById("addGenre").value;  
+
+            let addGenreObj = {};
+            var addedToMovieArray= [];
+
+            for (var i = 0; i < moviesArray.length; i++) {
+                if (moviesArray[i].title === getTitle) {
+                    addGenreObj = moviesArray[i];
+                }
+            } 
+            for (var j = 0; j < addGenreObj.genres.length; j++) {
+                    if(addGenreObj.genres.indexOf(addGenre) === -1){
+                        if(addGenre === ""){
+                            console.log("space")
+                        }
+                        else{
+                            addGenreObj.genres.push(addGenre); 
+                            console.log(addGenreObj)  
+                        } 
+                    }
+            }
+                addedToMovieArray.push(addGenreObj);
+                movieDatabase.showAllMovies(addedToMovieArray); 
+                return addedToMovieArray;
+        },
+
+        removeGenre: function () {
+            console.log("Fattty")
+            let getTitle = document.getElementById("getTitle").value;
+            let removeGenre = document.getElementById("removeGenre").value;
+       
+            var removedIt ={};
+            var finalRemoved = [];
+
+            for (var i = 0; i < moviesArray.length; i++) {
+                if (moviesArray[i].title === getTitle) {
+                    removedIt = moviesArray[i];
+                }
+            } 
+            for (var j = 0; j < removedIt.genres.length; j++) {
+                //index av genre[i]
+                if (removedIt.genres[j] == removeGenre){
+                    //hittar rätt genre
+                    removedIt.genres.splice(j, 1);
+                    finalRemoved.push(removedIt);
+                    movieDatabase.showAllMovies(finalRemoved); 
+                    return finalRemoved;
+                }  
+            }
+        },
+
+        addRating: function () {
+            let getTitle = document.getElementById("getTitle").value;
+            let ratingFromUser = document.getElementById("addRating").value;
+            
+            let addRating ={};
+            let finalAdd = [];
+
+            for (var i = 0; i < moviesArray.length; i++) {
+                if (moviesArray[i].title === getTitle) {
+                    addRating = moviesArray[i];
+                }
+            }               
+                addRating.ratings.push(parseInt(ratingFromUser));
+                finalAdd.push(addRating)
+                movieDatabase.showAllMovies(finalAdd); 
+                
+                return finalAdd
+        },
+
+        averageRating: () => {
             //en for loop för att gå igenom moviesArrayen
             for (let i = 0; i < moviesArray.length; i++) {
                 //tar ut ratings för att kunna använda reduce
                 let ratingList = moviesArray[i].ratings;
                 //tar ut average för att kunna pusha in det uträknade medelvärdet
                 let averageList = moviesArray[i].average;
+                //om det inte finns någon rating
+                if (isNaN(ratingList) === true){
                 //reduce slår ihop det totala värdet i ratings-arrayerna
-                let meanRating = ratingList.reduce((total, currentValue) => {
+                let reduceRating = ratingList.reduce((total, currentValue) => {
                     return total + currentValue;
                 }, 0);
-                    var averageRating = meanRating/ratingList.length;
+                    var averageRating = reduceRating/ratingList.length;
                     //det uträknade medelvärdet sparas i en variabel
                     //värdet avrundas till en decimal med toFixed
-                    var fixedAverageRating = averageRating.toFixed();
+                    var fixedAverageRating = averageRating.toFixed(1);
                     //pushas sedan in i moviesArray[i]average
                     averageList.push(fixedAverageRating);
+                }
             }
-        }
-    };
-})(); //här tar module pattern objektet slut
+               return fixedAverageRating;
+        },
 
-//all interaktion som sker på indexsidan kickar igång funktionerna i addEventListener
+
+addEvent: () => { 
 document.getElementById('add').addEventListener('click', movieDatabase.getUserInput);
 document.getElementById('showMovies').addEventListener('click', movieDatabase.inputAllMovies);
 document.getElementById('getGenre').addEventListener('change', movieDatabase.inputGenre);
 document.getElementById('getYear').addEventListener('change', movieDatabase.inputYear);
-// document.getElementById('showHighRatings').addEventListener('click', movieDatabase.inputHighRatings);
-// document.getElementById('showLowRatings').addEventListener('click', movieDatabase.inputLowRatings);
 document.getElementById('showMinRating').addEventListener('click', movieDatabase.inputMinRatings);
 document.getElementById('showMaxRating').addEventListener('click', movieDatabase.inputMaxRatings);
+document.getElementById('getTitle').addEventListener('change', movieDatabase.inputGetTitle);
+document.getElementById('addGenre').addEventListener('change', movieDatabase.inputGetTitle);
+document.getElementById('removeGenre').addEventListener('change', movieDatabase.removeGenre);
+document.getElementById('addRating').addEventListener('change', movieDatabase.addRating);
+}
+
+};
+})(); //här tar module pattern objektet slut
+
+//all interaktion som sker på indexsidan kickar igång funktionerna i addEventListener
+
 
 function printMovieDatabase(){
-// console.log(movieDatabase.showAllMovies());
-// console.log(movieDatabase.addNewMovie);
-// console.log(movieDatabase.returnMoviesArray());
-// console.log(movieDatabase.getGenre());
-// console.log(movieDatabase.showGenre());
-// console.log(movieDatabase.rating());
-console.log(movieDatabase.meanRating());
-// console.log(movieDatabase.showMaxRating());
-// console.log(movieDatabase.pusInRating("Comedy"));
-// console.log(movieDatabase.sortMovieByYear());
-// console.log(movieDatabase.pushMeanRating());
-// console.log(movieDatabase.ratingMean());
-// console.log(movieDatabase.getBla());
+console.log(movieDatabase.averageRating());
+console.log(movieDatabase.addEvent());
+//kalla på den när jag lägger till en ny film
 }
 printMovieDatabase();
 
-
+ 

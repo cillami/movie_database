@@ -2,85 +2,208 @@
 html, body {
   font: 16px/24px;
   margin: 0 auto;
-  padding: 0; }
+  padding: 0;
+  /*	font-family: 'Asap', sans-serif;*/
+  font-family: 'Sintony', sans-serif;
+  /*	font-family: 'Signika Negative', sans-serif;*/
+  /*	font-family: 'Fredericka the Great', cursive;*/ }
 
+* {
+  font-size: 0.87rem; }
+
+/* --- BUTTONS ---- */
+.p-background {
+  background-color: yellow;
+  margin-top: 0;
+  padding: 0.1rem; }
+
+#showMovies {
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid grey;
+  background-color: lightgreen;
+  width: 5rem;
+  margin-left: 2rem; }
+
+#showMaxRating {
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid grey;
+  background-color: lightgreen;
+  width: 5rem;
+  margin-left: 0.3rem; }
+
+#showMinRating {
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid grey;
+  background-color: lightgreen;
+  width: 5rem;
+  margin-left: 1.1rem; }
+
+#add {
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid grey;
+  background-color: lightgreen;
+  width: 99%; }
+
+/* ----------------- */
+.input {
+  width: 98%;
+  border-radius: 0.3rem;
+  border: 1px solid lightgrey; }
+
+/* -------Select OPTION---------- */
+#getYear {
+  width: 7rem; }
+
+#getGenre {
+  margin-left: 1.5rem;
+  width: 8.2rem; }
+
+#getTitle {
+  margin-left: 0.9rem;
+  width: 8.2rem; }
+
+#addGenre {
+  margin-left: 2.5rem;
+  width: 8.2rem; }
+
+#removeGenre {
+  margin-left: 0.7rem;
+  width: 8.2rem;
+  justify-content: right; }
+
+#addRating {
+  margin-left: 2.4rem;
+  width: 8.2rem; }
+
+/* ------small font----------- */
 .small {
-  font-size: 0.8rem; }
+  font-size: 0.7rem;
+  padding-top: 0.4rem;
+  margin: 0; }
+
+/* ------small font----------- */
+.header {
+  /*	font-family: $paragraf-font;*/
+  /*font-family: 'Faster One', cursive;*/
+  font-family: 'Pacifico', cursive;
+  background-color: lightgreen;
+  color: grey; }
 
 .header h1 {
-  margin: 1rem;
-  margin-bottom: 0rem; }
+  margin: 0;
+  font-size: 2.7rem;
+  padding-left: 1rem; }
 
-.box-wrapper {
+.box-box-wrapper {
+  background-color: lightgreen;
   display: flex;
   flex-direction: row;
-  justify-content: center; }
+  width: 100%; }
+
+.box-wrapper1 {
+  background-color: lightblue;
+  /*	display:flex;
+  	flex-direction: row;
+  	justify-content: center;*/
+  /*width:17rem;*/ }
 
 .box-left {
-  border: 1px solid black;
-  width: 20%;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  width: 16rem;
   margin: 1rem;
   padding: 1rem; }
 
 .box-middle {
-  border: 1px solid black;
-  width: 20%;
+  background-color: lightgreen;
+  border: 1px solid grey;
+  width: 16rem;
   margin: 1rem;
   padding: 1rem; }
 
 .box-middle-year {
-  border: 1px solid black;
+  background-color: lightblue;
+  border: 1px solid grey;
+  width: 16rem;
   margin: 1rem;
   padding: 1rem; }
 
 .box-right {
-  border: 1px solid black;
-  width: 20%;
+  background-color: yellow;
+  border: 1px solid grey;
+  width: 16rem;
   margin: 1rem;
   padding: 1rem; }
 
 .box-right-movie {
-  border: 1px solid black;
-  width: 20%;
+  background-color: lightblue;
+  border: 1px solid grey;
+  width: 16rem;
+  margin: 1rem;
+  padding: 1rem; }
+
+.box-right-ratings {
+  background-color: #C39BD3;
+  border: 1px solid grey;
+  width: 16rem;
   margin: 1rem;
   padding: 1rem; }
 
 .box-right-genres {
-  border: 1px solid black;
-  width: 20%;
+  background-color: pink;
+  border: 1px solid grey;
+  width: 16rem;
   margin: 1rem;
   padding: 1rem; }
 
-.bottom-wrapper {
+/*.bottom-wrapper{
+	background-color: purple;
+	display:flex;
+	width:100%;
+	justify-content: center;
+		flex-direction: column;
+}*/
+/*.box-bottom{
+
+}*/
+#movieList {
   display: flex;
-  width: 100%;
-  justify-content: center; }
+  flex-flow: row wrap;
+  background-color: lightblue;
+  width: 65rem; }
 
-.box-bottom {
-  width: 50%; }
+.items {
+  width: 25rem;
+  display: flex;
+  background: yellow;
+  margin: 1rem;
+  height: 20rem; }
 
-.movies-html {
-  width: 100%;
-  list-style-type: none;
-  display: flex; }
+.items h1 {
+  font-size: 1.2rem;
+  background-color: lightgreen;
+  padding: 0.5rem; }
 
-.movies-html .img {
-  width: 80%;
-  padding: 0 1rem; }
+.p-no-margin {
+  margin-bottom: 0; }
+
+.items .img {
+  width: 85%; }
 
 .movies-html-left {
   background: lightgrey;
-  width: 30%;
-  margin-bottom: 1.5rem; }
-
-.movies-html-middle {
-  background: lightgrey;
-  width: 40%;
-  margin-bottom: 1.5rem; }
+  width: 20rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem; }
 
 .movies-html-right {
   background: lightgrey;
-  width: 50%;
-  margin-bottom: 1.5rem; }
+  width: 26rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem; }
 
 /*# sourceMappingURL=main.css.map */
