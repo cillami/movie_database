@@ -122,8 +122,10 @@ width:8.2rem;
 /*	font-family: $paragraf-font;*/
 /*font-family: 'Faster One', cursive;*/
 	font-family: 'Pacifico', cursive;
-	background-color: lightgreen;
+	background-color: lightblue;
 	color: grey;
+	position:fixed;
+	z-index:1000;
 
 }
 .header h1{
@@ -133,7 +135,7 @@ width:8.2rem;
 }
 
 .box-box-wrapper{
-	background-color: lightgreen;
+	background-color: lightblue;
 	display:flex;
 	flex-direction: row;
 	width:100%;
@@ -142,12 +144,7 @@ width:8.2rem;
 
 .box-wrapper1 {
 	background-color: lightblue;
-/*	display:flex;
-	flex-direction: row;
-	justify-content: center;*/
-/*width:17rem;*/
-
-
+	margin-top:4rem;
 }
 .box-left {
 	background-color: lightgrey;
@@ -222,6 +219,7 @@ width:16rem;
 	flex-flow: row wrap;
 	background-color: lightblue;
 	width:65rem;
+	margin-top:4rem;
 }
 
 .items {

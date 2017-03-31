@@ -96,8 +96,10 @@ html, body {
   /*	font-family: $paragraf-font;*/
   /*font-family: 'Faster One', cursive;*/
   font-family: 'Pacifico', cursive;
-  background-color: lightgreen;
-  color: grey; }
+  background-color: lightblue;
+  color: grey;
+  position: fixed;
+  z-index: 1000; }
 
 .header h1 {
   margin: 0;
@@ -105,17 +107,14 @@ html, body {
   padding-left: 1rem; }
 
 .box-box-wrapper {
-  background-color: lightgreen;
+  background-color: lightblue;
   display: flex;
   flex-direction: row;
   width: 100%; }
 
 .box-wrapper1 {
   background-color: lightblue;
-  /*	display:flex;
-  	flex-direction: row;
-  	justify-content: center;*/
-  /*width:17rem;*/ }
+  margin-top: 4rem; }
 
 .box-left {
   background-color: lightgrey;
@@ -180,7 +179,8 @@ html, body {
   display: flex;
   flex-flow: row wrap;
   background-color: lightblue;
-  width: 65rem; }
+  width: 65rem;
+  margin-top: 4rem; }
 
 .items {
   width: 25rem;
