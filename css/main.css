@@ -79,6 +79,12 @@ html, body {
   margin-left: 2.4rem;
   width: 8.2rem; }
 
+#ratings {
+  width: 14rem; }
+
+#newMovieGenres {
+  width: 15.8rem; }
+
 /* ------small font----------- */
 .small {
   font-size: 0.7rem;

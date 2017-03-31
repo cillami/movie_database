@@ -66,6 +66,8 @@ font-size: 0.87rem;
 	border-radius: 0.3rem;
 	border: 1px solid lightgrey;
 }
+
+
 /* -------Select OPTION---------- */
 #getYear{
 
@@ -95,6 +97,14 @@ justify-content: right;
 #addRating{
 margin-left:2.4rem;
 width:8.2rem;
+}
+
+#ratings{
+	width:14rem;
+}
+
+#newMovieGenres{
+	width:15.8rem;
 }
 
 /* ------small font----------- */
@@ -145,8 +155,6 @@ width:8.2rem;
 width:16rem;
 	margin: 1rem;
 	padding:1rem;
-
-
 }
 .box-middle {
 	background-color: lightgreen;

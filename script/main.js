@@ -214,7 +214,7 @@ var moviesArray = [
                     <h1>${moviesArray[i].title}</h1>
                     <p>Release Year: ${moviesArray[i].year} </p>
                     <p>Genres: ${moviesArray[i].genres.join(", ")} </p>
-                    <p>Ratings: ${moviesArray[i].ratings} </p>
+                    <p>Ratings: ${moviesArray[i].ratings.join(", ")} </p>
                     <p>Avrage rating: ${moviesArray[i].average} </p>
                 
                 </div>
@@ -234,8 +234,9 @@ var moviesArray = [
             this.title = title;
             this.year = year;
             this.cover = cover;
-            this.genres = genres.split(", ");
+            this.genres = genres;
             this.ratings = ratings;
+            // this.average = average;
         },
 
         //hämtar värden från inputfältet på indexsidan, value kopplas till variablerna
@@ -243,13 +244,12 @@ var moviesArray = [
             var title = document.getElementById('title').value
             var year = document.getElementById('year').value
             var cover = document.getElementById('cover').value
-            var genres = document.getElementById('genres').value
-            var ratings = document.getElementById('ratings').value
-            // var actors = document.getElementById('actors').value
+            var genres = document.getElementById('newMovieGenres').options[newMovieGenres.selectedIndex].value;
+            var ratings = document.getElementById('ratings').value;
 
             //ett nytt konstruktorobjekt skapas genom new, och värdena binds 
             //till det nya objektet som skapas (newMovie)
-            var newMovie = new movieDatabase.movieConstructor(title, year, cover, genres, ratings);
+            var newMovie = new movieDatabase.movieConstructor(title, yearInt, cover, genres, ratings);
             //skickar vidare det nya objektet till pushMovie-funktionen
             movieDatabase.pushMovieToDatabase(newMovie); 
             // movieDatabase.averageRating(); 
@@ -262,7 +262,7 @@ var moviesArray = [
             newMoviesArray.push(movie);
             moviesArray = newMoviesArray;
 
-            // movieDatabase.averageRating();
+            movieDatabase.averageRating(newMoviesArray);
         },
 
 
@@ -341,7 +341,6 @@ var moviesArray = [
             return moviesArray.filter((movie) => {
                 if(movie.average == max){
                     finalAverageRatings.push(movie) 
-                    console.log(finalAverageRatings)     
                     return finalAverageRatings;}
             });
         },
@@ -458,12 +457,13 @@ var moviesArray = [
 
         averageRating: () => {
             //en for loop för att gå igenom moviesArrayen
+            averageRatingFinal = [];
             for (let i = 0; i < moviesArray.length; i++) {
                 //tar ut ratings för att kunna använda reduce
                 let ratingList = moviesArray[i].ratings;
                 //tar ut average för att kunna pusha in det uträknade medelvärdet
                 let averageList = moviesArray[i].average;
-                //om det inte finns någon rating
+        //om det inte finns någon rating räkna inte med det
                 if (isNaN(ratingList) === true){
                 //reduce slår ihop det totala värdet i ratings-arrayerna
                 let reduceRating = ratingList.reduce((total, currentValue) => {
@@ -496,6 +496,5 @@ document.getElementById('addRating').addEventListener('change', movieDatabase.ad
 
 };
 })(); //här tar module pattern objektet slut
-
 movieDatabase.averageRating();
 movieDatabase.addEvent();
