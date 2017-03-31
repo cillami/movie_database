@@ -216,14 +216,21 @@ var moviesArray = [
                     <p>Genres: ${moviesArray[i].genres.join(", ")} </p>
                     <p>Ratings: ${moviesArray[i].ratings.join(", ")} </p>
                     <p>Avrage rating: ${moviesArray[i].average} </p>
-                
-                </div>
-                
-                </div>`;
+                    </div></div>`;
+                     
+            //     var actors = moviesArray[i].actors;
+            //     for (var j = 0; j < actors.length; j++) {
+            //     var actorsName = actors[j];
+            //    console.log(actorsName)
 
-            // showHTML läggs till på id movielist och visas på indexsidan genom innerHTML
-            movieList.innerHTML = showHTML;
+            //     showHTML += `${actors[j].name}<p> `
+            // }
+        
+            //    showHTML += `</div></div>`;
             }
+                        // showHTML läggs till på id movielist och visas på indexsidan genom innerHTML
+            movieList.innerHTML = showHTML;
+        
         },
 /*--------------------------*/      
         // MOVIE CONSTRUCTOR 
